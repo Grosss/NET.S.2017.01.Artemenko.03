@@ -10,8 +10,12 @@ namespace Task3.CUI
             Console.WriteLine(BitInsertion.PassNumbersAndBits(8, 15, 0, 0));
             Console.WriteLine(BitInsertion.PassNumbersAndBits(0, 15, 30, 30));
             Console.WriteLine(BitInsertion.PassNumbersAndBits(0, 15, 0, 30));
-            Console.WriteLine(BitInsertion.PassNumbersAndBits(15, -15, 0, 4));
+            Console.WriteLine(BitInsertion.PassNumbersAndBits(int.MaxValue, int.MaxValue, 3, 5));
             Console.WriteLine(BitInsertion.PassNumbersAndBits(15, int.MaxValue, 3, 5));
+            Console.WriteLine(BitInsertion.PassNumbersAndBits(15, 15, 1, 3));
+            Console.WriteLine(BitInsertion.PassNumbersAndBits(15, 15, 1, 4));
+            Console.WriteLine(BitInsertion.PassNumbersAndBits(15, -15, 0, 4));
+            
 
             Console.ReadLine();
         }
