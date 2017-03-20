@@ -21,7 +21,7 @@ namespace Task3.NUnitTests
         [TestCase(15, -15, 0, 4, ExpectedResult = 31)]
         [TestCase(15, -15, 1, 4, ExpectedResult = 15)]
         [TestCase(-8, -15, 1, 4, ExpectedResult = -6)]
-        public int PassNumbersAndBits_2ndNumberIsInsertedInFirst_ExpectedPositiveTest(int first, int second, int startPosition, int finishPosition)
+        public int PassNumbersAndBits_SecondNumberIsInsertedInFirst_ExpectedPositiveTest(int first, int second, int startPosition, int finishPosition)
         {
             return BitInsertion.PassNumbersAndBits(first, second, startPosition, finishPosition);
         }
@@ -30,14 +30,14 @@ namespace Task3.NUnitTests
         [TestCase(8, 15, 5, -1)]
         [TestCase(8, 15, 31, 5)]
         [TestCase(8, 15, 5, 31)]
-        public void PassNumbersAndBits_2ndNumberIsInsertedInFirst_ThrowsArgumentOutOfRangeException(int first, int second, int startPosition, int finishPosition)
+        public void PassNumbersAndBits_SecondNumberIsInsertedInFirst_ThrowsArgumentOutOfRangeException(int first, int second, int startPosition, int finishPosition)
         {
             Assert.Throws<ArgumentOutOfRangeException>(() => BitInsertion.PassNumbersAndBits(first, second, startPosition, finishPosition));
         }
 
         [TestCase(8, 15, 7, 5)]
         [TestCase(8, 15, 1, 0)]
-        public void PassNumbersAndBits_2ndNumberIsInsertedInFirst_ThrowsArgumentException(int first, int second, int startPosition, int finishPosition)
+        public void PassNumbersAndBits_SecondNumberIsInsertedInFirst_ThrowsArgumentException(int first, int second, int startPosition, int finishPosition)
         {
             Assert.Throws<ArgumentException>(() => BitInsertion.PassNumbersAndBits(first, second, startPosition, finishPosition));
         }
