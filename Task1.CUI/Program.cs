@@ -7,7 +7,7 @@ namespace Task1.CUI
     {
         static void Main(string[] args)
         {
-            int[] array1 = { 1, 100, 50, -51, 1, 1 };
+            int[] array1 = { 1, 2, 3, 4, 3, 2, 1 };
             int[] array2 = { 14, 21, -12, 32, -139, 67 };
             int result = ArrayTools.FindArrayCenter(array1);
             if (result == -1)

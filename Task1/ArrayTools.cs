@@ -8,10 +8,16 @@ namespace Task1
         {
             if (array == null)
                 throw new ArgumentNullException();
-            int leftPartSum = 0, rightPartSum = 0;
+            if (array.Length < 1 || array.Length > 999)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
+            int leftPartSum, rightPartSum;
             for(int i = 1; i < array.Length - 1; i++)
             {
-                for(int j = 0; j < i; j++)
+                leftPartSum = 0; rightPartSum = 0;
+                for (int j = 0; j < i; j++)
                 {
                     leftPartSum += array[j];
                 }
