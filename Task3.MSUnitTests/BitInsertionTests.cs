@@ -13,7 +13,7 @@ namespace Task3.MSUnitTests
         [DataSource(
             "Microsoft.VisualStudio.TestTools.DataSource.XML",
             "|DataDirectory|\\Data.xml",
-            "TestCase",
+            "TestCase1",
             DataAccessMethod.Sequential)]
         [DeploymentItem("Task3.MSUnitTests\\Data.xml")]
 
@@ -21,18 +21,23 @@ namespace Task3.MSUnitTests
         public void PassNumbersAndBits_SecondNumberIsInsertedInFirst_ExpectedPositiveTest()
         {
             //Arrange
-            if (TestContext.DataRow["FirstNumb"].ToString() == "int.MaxValue")
-                TestContext.DataRow["FirstNumb"] = int.MaxValue;
-            else if (TestContext.DataRow["FirstNumb"].ToString() == "int.MinValue")
-                TestContext.DataRow["FirstNumb"] = int.MinValue;
+            if (TestContext.DataRow["firstNumb"].ToString() == "int.MaxValue")
+                TestContext.DataRow["firstNumb"] = int.MaxValue;
+            else if (TestContext.DataRow["firstNumb"].ToString() == "int.MinValue")
+                TestContext.DataRow["firstNumb"] = int.MinValue;
+
+            if (TestContext.DataRow["secondNumb"].ToString() == "int.MaxValue")
+                TestContext.DataRow["secondNumb"] = int.MaxValue;
+            else if (TestContext.DataRow["secondNumb"].ToString() == "int.MinValue")
+                TestContext.DataRow["secondNumb"] = int.MinValue;
+
+            if (TestContext.DataRow["ExpectedResult"].ToString() == "int.MaxValue")
+                TestContext.DataRow["ExpectedResult"] = int.MaxValue;
+            else if (TestContext.DataRow["ExpectedResult"].ToString() == "int.MinValue")
+                TestContext.DataRow["ExpectedResult"] = int.MinValue;
+
             var firstNumber = Convert.ToInt32(TestContext.DataRow["firstNumb"]);
-
-            if (TestContext.DataRow["FirstNumb"].ToString() == "int.MaxValue")
-                TestContext.DataRow["FirstNumb"] = int.MaxValue;
-            else if (TestContext.DataRow["FirstNumb"].ToString() == "int.MinValue")
-                TestContext.DataRow["FirstNumb"] = int.MinValue;
             var secondNumber = Convert.ToInt32(TestContext.DataRow["secondNumb"]);
-
             var firstBitPos = Convert.ToInt32(TestContext.DataRow["firstBitPos"]);
             var secondBitPos = Convert.ToInt32(TestContext.DataRow["secondBitPos"]);
 
@@ -48,14 +53,25 @@ namespace Task3.MSUnitTests
         [DataSource(
             "Microsoft.VisualStudio.TestTools.DataSource.XML",
             "|DataDirectory|\\Data.xml",
-            "TestCase1",
+            "TestCase2",
             DataAccessMethod.Sequential)]
+        [DeploymentItem("Task3.MSUnitTests\\Data.xml")]
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void PassNumbersAndBits_SecondNumberIsInsertedInFirst_ThrowsArgumentOutOfRangeException()
         {
-            var firstNumber = Convert.ToInt32(TestContext.DataRow["FirstNumb"]);
+            if (TestContext.DataRow["firstNumb"].ToString() == "int.MaxValue")
+                TestContext.DataRow["firstNumb"] = int.MaxValue;
+            else if (TestContext.DataRow["firstNumb"].ToString() == "int.MinValue")
+                TestContext.DataRow["firstNumb"] = int.MinValue;
+
+            if (TestContext.DataRow["secondNumb"].ToString() == "int.MaxValue")
+                TestContext.DataRow["secondNumb"] = int.MaxValue;
+            else if (TestContext.DataRow["secondNumb"].ToString() == "int.MinValue")
+                TestContext.DataRow["secondNumb"] = int.MinValue;
+
+            var firstNumber = Convert.ToInt32(TestContext.DataRow["firstNumb"]);
             var secondNumber = Convert.ToInt32(TestContext.DataRow["secondNumb"]);
             var firstBitPos = Convert.ToInt32(TestContext.DataRow["firstBitPos"]);
             var secondBitPos = Convert.ToInt32(TestContext.DataRow["secondBitPos"]);
@@ -65,20 +81,29 @@ namespace Task3.MSUnitTests
         [DataSource(
             "Microsoft.VisualStudio.TestTools.DataSource.XML",
             "|DataDirectory|\\Data.xml",
-            "TestCase2",
+            "TestCase3",
             DataAccessMethod.Sequential)]
-
+        [DeploymentItem("Task3.MSUnitTests\\Data.xml")]
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void PassNumbersAndBits_SecondNumberIsInsertedInFirst_ThrowsArgumentException()
         {
-            var firstNumber = Convert.ToInt32(TestContext.DataRow["FirstNumb"].ToString());
+            if (TestContext.DataRow["firstNumb"].ToString() == "int.MaxValue")
+                TestContext.DataRow["firstNumb"] = int.MaxValue;
+            else if (TestContext.DataRow["firstNumb"].ToString() == "int.MinValue")
+                TestContext.DataRow["firstNumb"] = int.MinValue;
+
+            if (TestContext.DataRow["secondNumb"].ToString() == "int.MaxValue")
+                TestContext.DataRow["secondNumb"] = int.MaxValue;
+            else if (TestContext.DataRow["secondNumb"].ToString() == "int.MinValue")
+                TestContext.DataRow["secondNumb"] = int.MinValue;
+
+            var firstNumber = Convert.ToInt32(TestContext.DataRow["firstNumb"]);
             var secondNumber = Convert.ToInt32(TestContext.DataRow["secondNumb"]);
             var firstBitPos = Convert.ToInt32(TestContext.DataRow["firstBitPos"]);
             var secondBitPos = Convert.ToInt32(TestContext.DataRow["secondBitPos"]);
             var actual = BitInsertion.PassNumbersAndBits(firstNumber, secondNumber, firstBitPos, secondBitPos);
-
         }
 
     }
