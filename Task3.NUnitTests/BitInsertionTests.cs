@@ -37,6 +37,8 @@ namespace Task3.NUnitTests
 
         [TestCase(8, 15, 7, 5)]
         [TestCase(8, 15, 1, 0)]
+
+
         public void PassNumbersAndBits_SecondNumberIsInsertedInFirst_ThrowsArgumentException(int first, int second, int startPosition, int finishPosition)
         {
             Assert.Throws<ArgumentException>(() => BitInsertion.PassNumbersAndBits(first, second, startPosition, finishPosition));
