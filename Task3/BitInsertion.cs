@@ -8,6 +8,12 @@ namespace Task3
         #region Public members
         public static int PassNumbersAndBits(int firstNumb, int secondNumb, int firstBitPos, int secondBitPos)
         {
+            if (firstBitPos < 0 || secondBitPos < 0 || firstBitPos > 30 || secondBitPos > 30)
+                throw new ArgumentOutOfRangeException();
+            if (firstBitPos > secondBitPos)
+                throw new ArgumentException();
+            
+
             int mask = (int) Math.Pow(2, secondBitPos - firstBitPos + 1) - 1;
             mask = (secondNumb & mask) << firstBitPos;
             return firstNumb | mask;
@@ -15,10 +21,11 @@ namespace Task3
 
         public static int PassNumbersAndBitsLonger(int firstNumb, int secondNumb, int firstBitPos, int secondBitPos)
         {
-            if (firstBitPos > secondBitPos)
-                throw new ArgumentException();
             if (firstBitPos < 0 || secondBitPos < 0 || firstBitPos > 30 || secondBitPos > 30)
                 throw new ArgumentOutOfRangeException();
+            if (firstBitPos > secondBitPos)
+                throw new ArgumentException();
+            
 
             BitArray a = new BitArray(new int[] { firstNumb });
             byte[] firstBinaryNumb = TransformIntoBitArray(firstNumb);

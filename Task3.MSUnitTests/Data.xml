@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestCases>
+  <TestCase>
+    <firstNumb>8</firstNumb>
+    <secondNumb>15</secondNumb>
+    <firstBitPos>0</firstBitPos>
+    <secondBitPos>0</secondBitPos>
+    <ExpectedResult>9</ExpectedResult>
+  </TestCase>
+  <TestCase>
+    <firstNumb>0</firstNumb>
+    <secondNumb>15</secondNumb>
+    <firstBitPos>30</firstBitPos>
+    <secondBitPos>30</secondBitPos>
+    <ExpectedResult>1073741824</ExpectedResult>
+  </TestCase>
+  <TestCase>
+    <firstNumb>0</firstNumb>
+    <secondNumb>15</secondNumb>
+    <firstBitPos>0</firstBitPos>
+    <secondBitPos>30</secondBitPos>
+    <ExpectedResult>15</ExpectedResult>
+  </TestCase>
+  <TestCase>
+    <firstNumb>int.MaxValue</firstNumb>
+    <secondNumb>int.MaxValue</secondNumb>
+    <firstBitPos>3</firstBitPos>
+    <secondBitPos>5</secondBitPos>
+    <ExpectedResult>int.MaxValue</ExpectedResult>
+  </TestCase>
+  <TestCase1>
+    <firstNumb>8</firstNumb>
+    <secondNumb>15</secondNumb>
+    <firstBitPos>31</firstBitPos>
+    <secondBitPos>5</secondBitPos>
+  </TestCase1>
+  <TestCase2>
+    <firstNumb>8</firstNumb>
+    <secondNumb>15</secondNumb>
+    <firstBitPos>7</firstBitPos>
+    <secondBitPos>5</secondBitPos>
+  </TestCase2>
+</TestCases>
